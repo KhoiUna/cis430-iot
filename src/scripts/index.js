@@ -1,4 +1,4 @@
-import fetchDevices from "./utils/fetchDevices";
+import DeviceUtil from "./utils/DeviceUtil";
 
 // Select elements
 const menuButton = document.querySelector("#menu-button");
@@ -12,8 +12,8 @@ menuButton.addEventListener("click", () => {
 
 window.addEventListener("load", async () => {
   try {
-    const devices = await fetchDevices();
-    if (devices)
+    const devices = await DeviceUtil.fetchDevices();
+    if (!devices)
       return (dropdownMenu.innerHTML += `
     <div class="ml-4 text-red-700 px-4 py-1 text-sm text-center font-bold" role="none">Error displaying devices</div>`);
 
