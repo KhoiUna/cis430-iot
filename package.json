@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && rm dist/assets/*.css && tailwindcss build -i src/styles/index.css -o dist/assets/index.css --minify",
     "preview": "vite preview"
   },
   "devDependencies": {
