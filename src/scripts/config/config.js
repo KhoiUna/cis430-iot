@@ -1,7 +1,7 @@
 const config = {
   origin:
     location.protocol === "http:"
-      ? "http://localhost/dashboard/php"
+      ? "http://localhost/cis/php"
       : "https://cis.meetlearn.net/php",
 };
 
