@@ -1,3 +1,14 @@
-export default {
+import { defineConfig } from "vite";
+
+export default defineConfig({
   base: "./",
-};
+  build: {
+    manifest: true,
+  },
+  css: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+});
