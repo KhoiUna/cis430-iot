@@ -2,11 +2,15 @@ import config from "../config/config";
 
 export default async function fetchDevices() {
   try {
-    const res = await fetch(`${config.origin}/getDevices.php`);
-    const devices = await res.json();
-    return devices;
+    const { error, success } = await (
+      await fetch(`${config.origin}/getDevices.php`)
+    ).json();
+
+    if (error) return;
+    return success;
   } catch (error) {
     console.error("Error fetching devices");
+    console.log(error);
     return;
   }
 }
