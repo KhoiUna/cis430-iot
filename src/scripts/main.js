@@ -13,8 +13,6 @@ menuButton.addEventListener("click", () => {
 window.addEventListener("load", async () => {
   try {
     const devices = await fetchDevices();
-    console.log(devices);
-
     devices.forEach(({ DeviceID, Name }) => {
       dropdownMenu.innerHTML += `<div class="py-1 text-left" role="none">
       <a
