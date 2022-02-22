@@ -11,7 +11,36 @@ export default class DeviceUtil {
       return success;
     } catch (error) {
       console.error("Error fetching devices");
-      console.log(error);
+      return;
+    }
+  }
+
+  static async fetchLastTemperature({ deviceID }) {
+    try {
+      const { error, success } = await (
+        await fetch(
+          `${config.origin}/getLastTemperature.php?deviceID=${deviceID}`
+        )
+      ).json();
+
+      if (error) return;
+      return success;
+    } catch (error) {
+      console.error("Error fetching last temperature", error);
+      return;
+    }
+  }
+
+  static async fetchDeviceName({ deviceID }) {
+    try {
+      const { error, success } = await (
+        await fetch(`${config.origin}/getDeviceName.php?deviceID=${deviceID}`)
+      ).json();
+
+      if (error) return;
+      return success;
+    } catch (error) {
+      console.error("Error fetching device name", error);
       return;
     }
   }
