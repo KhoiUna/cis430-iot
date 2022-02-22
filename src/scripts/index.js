@@ -21,10 +21,10 @@ window.addEventListener("load", async () => {
       dropdownMenu.innerHTML += `
       <a
         href="device.html?deviceID=${DeviceID}"
-        class="text-gray-700 px-4 py-1 text-sm text-left"
+        class="text-gray-700 text-md text-left"
         role="none"
         tabindex="0"
-        ><div class="ml-4" role="menuitem"><span class="font-bold mr-2">ID:</span>${DeviceID}
+        ><div class="hover:bg-slate-200 py-2 px-4" role="menuitem"><span class="font-bold mr-2">ID:</span>${DeviceID}
         <span class="font-bold ml-5 mr-2">Name:</span>${Name}</div></a
       >`;
     });
