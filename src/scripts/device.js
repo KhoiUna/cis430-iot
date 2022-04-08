@@ -52,17 +52,20 @@ async function drawChart() {
   }
 }
 
+// Main
 window.addEventListener("load", async () => {
   try {
-    // Display info
-    deviceIDSpan.innerText = deviceID;
+    if (deviceID) {
+      // Display info
+      deviceIDSpan.innerText = deviceID;
 
-    const deviceName = await DeviceUtil.fetchDeviceName({ deviceID });
-    deviceNameSpan.innerText = deviceName;
+      const deviceName = await DeviceUtil.fetchDeviceName({ deviceID });
+      deviceNameSpan.innerText = deviceName;
 
-    // Draw gauge
-    google.charts.load("current", { packages: ["gauge"] });
-    google.charts.setOnLoadCallback(drawChart);
+      // Draw gauge
+      google.charts.load("current", { packages: ["gauge"] });
+      google.charts.setOnLoadCallback(drawChart);
+    }
   } catch (error) {
     console.error("Error displaying device data");
   }
