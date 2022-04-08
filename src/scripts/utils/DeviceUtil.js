@@ -31,6 +31,21 @@ export default class DeviceUtil {
     }
   }
 
+  static async fetchTempOverTime({ deviceID }) {
+    try {
+      const { error, success } = await (
+        await fetch(
+          `${config.origin}/getTemperatureOverTime.php?deviceID=${deviceID}`
+        )
+      ).json();
+
+      if (error) return;
+      return success;
+    } catch (error) {
+      console.error("Error fetching temperature over time data");
+    }
+  }
+
   static async fetchDeviceName({ deviceID }) {
     try {
       const { error, success } = await (
