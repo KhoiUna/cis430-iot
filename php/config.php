@@ -1,5 +1,8 @@
 <?php
-header("Access-Control-Allow-Origin: *");
+$development = getenv('DEVELOPMENT');
+if($development == "true") {
+    header("Access-Control-Allow-Origin: *");
+}
 
 $servername = getenv('SERVERNAME');
 $username = getenv('USERNAME');
