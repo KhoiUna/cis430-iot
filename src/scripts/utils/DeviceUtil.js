@@ -31,7 +31,7 @@ export default class DeviceUtil {
     }
   }
 
-  static async fetchTempOverTime({ deviceID }) {
+  static async fetchTemperatureOverTime({ deviceID }) {
     try {
       const { error, success } = await (
         await fetch(
