@@ -5,7 +5,7 @@ require_once 'config.php';
 $deviceId = $_GET["deviceID"];
 
 $sql = "SELECT `Timestamp`, DeviceTemp FROM Temperature WHERE DeviceID = '" . $deviceId . "'";
-$sql = $sql . " ORDER BY `Timestamp` DESC LIMIT 30;";
+$sql = $sql . " ORDER BY `Timestamp` DESC LIMIT 10;";
 // echo $sql;
 
 $data = [];
@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
 
   echo json_encode(array(
     "error" => false,
-    "success" => json_encode(array_reverse($data))
+    "success" => array_reverse($data)
   ));  
 } else {
     echo json_encode(array(
