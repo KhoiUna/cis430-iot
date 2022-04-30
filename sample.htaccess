@@ -1,0 +1,4 @@
+SetEnv SERVERNAME "your servername"
+SetEnv USERNAME "your mysql username"
+SetEnv PASSWORD "your mysql db password"
+SetEnv DBNAME "your mysql db name"
